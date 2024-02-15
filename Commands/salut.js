@@ -4,8 +4,10 @@ const { SlashCommandBuilder } = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("ping")
-    .setDescription("Replies with Pong!"),
+    .setDescription("Affiche la latence du bot"),
   async execute(interaction) {
-    await interaction.reply({ content: `Pong : \`${bot.ws.ping}\` ` });
+    await interaction.reply({
+      content: `Salut  ${interaction.user.username} !`,
+    });
   },
 };
