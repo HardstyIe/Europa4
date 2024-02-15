@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { type } = require("os");
 
 module.exports = async (bot) => {
   fs.readdirSync("./Events")
