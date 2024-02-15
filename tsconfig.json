@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "strict": true,
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "types/**/*.d.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

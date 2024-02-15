@@ -1,8 +1,28 @@
 {
+  "name": "europa4",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node --esm src/main.ts",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@discordjs/rest": "^2.2.0",
+    "@discordjs/voice": "^0.16.1",
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.4",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19"
   }
 }
