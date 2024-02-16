@@ -1,22 +1,30 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ESNext",
-    "sourceMap": true,
+    "module": "commonjs",
+    "rootDir": "./src/",
     "outDir": "./dist/",
     "strict": true,
-    "moduleResolution": "Bundler",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "experimentalDecorators": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "baseUrl": "./src",
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
     "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ]
+      "node_modules/@types"
+    ],
+    "sourceMap": false,
+    "baseUrl": "./"
   },
+  "files": [
+    "src/main.ts"
+  ],
   "include": [
-    "src/**/*.ts",
-    "types/**/*.d.ts",
+    "./**/*.ts"
   ],
   "exclude": [
     "node_modules",

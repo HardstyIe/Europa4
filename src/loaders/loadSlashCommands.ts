@@ -1,19 +1,22 @@
-import { Client, REST, Routes, SlashCommandBuilder } from "discord.js";
-import { clientId, guildId, token } from "src/config";
+import { Client, REST, Routes } from "discord.js";
+import { config } from "src/config";
+import CommandType from "../../types/discord";
 
 export async function loadSlashCommand(client: Client) {
-  const commands: SlashCommandBuilder[] = [];
-  const rest = new REST().setToken(token!);
-
-  client.commands.forEach((cmd) => commands.push(cmd.command));
+  const commands: CommandType[] = [];
+  const rest = new REST().setToken(config.token!);
+  const commandJSON = commands.flatMap((oldCMD) => oldCMD.command.toJSON());
 
   try {
     console.log(
       `Started refreshing ${commands.length} application (/) commands.`
     );
-    await rest.put(Routes.applicationGuildCommands(clientId!, guildId!), {
-      body: commands,
-    });
+    await rest.put(
+      Routes.applicationGuildCommands(config.clientId!, config.guildId!),
+      {
+        body: commandJSON,
+      }
+    );
     console.log(
       `Successfully reloaded ${commands.length} application (/) commands.`
     );

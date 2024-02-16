@@ -5,7 +5,6 @@ export const command = new SlashCommandBuilder()
   .setDescription("Affiche la latence du bot");
 
 export async function execute(interaction: ChatInputCommandInteraction) {
-  await interaction.deferReply();
   await interaction.reply({
     content: `Ping : \`${interaction.client.ws.ping}\` ms`,
   });
